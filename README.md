@@ -51,7 +51,7 @@ O repositório está organizado da seguinte forma:
 1. Clone este repositório:
    ```bash
    git clone git@github.com:BusinessFileGuardian/Multipass-Automation.git
-   cd multipass-automation
+   cd  Multipass-Automation
    ```
 
 2. Navegue até o diretório `scripts/` e execute o script de instalação:
