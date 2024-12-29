@@ -1,4 +1,4 @@
-Segue o script em Bash para instalar o **Multipass**, iniciar uma máquina virtual Ubuntu 20.04 com 4 GB de memória e 50 GB de armazenamento, e garantir que ela esteja pronta ao final do processo:
+Segue o script em Bash para instalar o **Multipass**, iniciar uma máquina virtual Ubuntu 20.04 com 2 GB de memória e 10 GB de armazenamento, e garantir que ela esteja pronta ao final do processo:
 
 
 
