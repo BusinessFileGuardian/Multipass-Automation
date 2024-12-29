@@ -1,4 +1,3 @@
-# Multipass Automation
 
 ## Sobre o Repositório
 Este repositório contém scripts e automações para configurar e gerenciar máquinas virtuais usando o **Multipass** no Linux. Ele é projetado para desenvolvedores que desejam configurar rapidamente ambientes de desenvolvimento locais baseados em Ubuntu.
@@ -51,7 +50,7 @@ O repositório está organizado da seguinte forma:
 ### Passo a Passo
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seuusuario/multipass-automation.git
+   git clone git@github.com:BusinessFileGuardian/Multipass-Automation.git
    cd multipass-automation
    ```
 
@@ -67,8 +66,9 @@ O repositório está organizado da seguinte forma:
 
 ## Estrutura Modular
 Os diretórios são projetados para serem autossuficientes, permitindo a reutilização de scripts em diferentes contextos. Certifique-se de verificar as dependências e pré-requisitos listados nos arquivos `readme.md` de cada procedimento antes de executá-los.
-
+- [Acesse as Pastas de Script](./script)
 - [Acesse as Pastas de Procedimentos](./procedures)
+
 
 ---
 
