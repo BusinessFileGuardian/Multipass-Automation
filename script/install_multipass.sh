@@ -1,7 +1,3 @@
-Aqui está o ajuste necessário para resolver o problema de permissões do Docker ao instalar o software. A solução foi incorporada diretamente no script, garantindo que o usuário seja adicionado ao grupo `docker` após a instalação.
-
-### Script Ajustado
-```bash
 #!/bin/bash
 
 # Verificar se o Multipass está instalado
@@ -35,11 +31,13 @@ case $USER_CHOICE in
 #cloud-config
 runcmd:
   - sudo apt update
-  - sudo apt install -y docker.io curl
+  - sudo apt install -y docker.io
+  - sudo apt install -y curl
   - curl -L "https://github.com/docker/compose/releases/download/\$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose
   - sudo chmod +x /usr/local/bin/docker-compose
   - sudo systemctl enable --now docker
   - sudo usermod -aG docker ubuntu
+  - newgrp docker
   - echo "Usuário ubuntu adicionado ao grupo docker. Reinicie a sessão para aplicar as alterações."
 EOL
         echo "Arquivo $CLOUD_INIT_FILE criado com sucesso."
@@ -75,29 +73,3 @@ EOL
         exit 1
         ;;
 esac
-```
-
-### Alterações Feitas
-1. **Adicionar o Usuário ao Grupo Docker**:
-   - Incluído o comando `sudo usermod -aG docker ubuntu` no arquivo `cloud-init.yaml`.
-   - Isso adiciona o usuário padrão `ubuntu` ao grupo `docker` para evitar problemas de permissão.
-
-2. **Mensagem de Reinício de Sessão**:
-   - Adicionada uma mensagem para lembrar o usuário de reiniciar a sessão após a criação da máquina.
-
-3. **Revisão de Erros**:
-   - Ajustado para garantir que mensagens claras sejam exibidas em caso de falhas.
-
-### Após Executar o Script
-- **Reinicie a Sessão na Máquina Virtual**:
-  Faça login novamente para garantir que as permissões do grupo `docker` sejam aplicadas corretamente. Isso pode ser feito com:
-  ```bash
-  multipass shell docker-dc
-  exit
-  multipass shell docker-dc
-  ```
-
-Testar o Docker com:
-```bash
-docker run hello-world
-```

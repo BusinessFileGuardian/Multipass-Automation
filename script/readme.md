@@ -7,9 +7,9 @@ Segue o script em Bash para instalar o **Multipass**, iniciar uma máquina virtu
    ```bash
    chmod +x install_multipass.sh
    ```
-3. Execute o script com privilégio de superusuário:
+3. Execute o script sem privilégio de superusuário:
    ```bash
-   sudo ./install_multipass.sh
+   ./install_multipass.sh
    ```
 4. Após a execução, você poderá acessar a máquina virtual com o comando:
    ```bash
