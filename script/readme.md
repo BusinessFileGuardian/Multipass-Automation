@@ -13,7 +13,7 @@ Segue o script em Bash para instalar o **Multipass**, iniciar uma máquina virtu
    ```
 4. Após a execução, você poderá acessar a máquina virtual com o comando:
    ```bash
-   multipass shell ubuntu-20-04-vm
+   multipass shell docker-dc
    ``` 
 
 Esse script cuidará de todo o processo, desde a instalação do Multipass até a criação e inicialização da máquina virtual.
