@@ -88,6 +88,9 @@ esac
 
 ```
 
+[![Clone o repositório](https://img.shields.io/badge/Clone%20o%20reposit%C3%B3rio-%E2%9D%A4%20GitHub-blue)](https://github.com/BusinessFileGuardian/Multipass-Automation)
+
+
 ### Alterações Feitas
 1. **Adicionar o Usuário ao Grupo Docker**:
    - Incluído o comando `sudo usermod -aG docker ubuntu` no arquivo `cloud-init.yaml`.
