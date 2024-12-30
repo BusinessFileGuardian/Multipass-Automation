@@ -35,7 +35,12 @@ runcmd:
   - curl -L "https://github.com/docker/compose/releases/download/\$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose
   - sudo chmod +x /usr/local/bin/docker-compose
   - sudo systemctl enable --now docker
+  - sudo newgrp docker
   - sudo usermod -aG docker ubuntu
+  - sudo systemctl restart docker
+  - sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+  - sudo systemctl restart sshd
+  - sudo reboot
   - echo "Usuário ubuntu adicionado ao grupo docker. Reinicie a sessão para aplicar as alterações."
 EOL
         echo "Arquivo $CLOUD_INIT_FILE criado com sucesso."
