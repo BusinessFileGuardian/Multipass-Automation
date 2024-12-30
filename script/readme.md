@@ -5,6 +5,8 @@ Segue o script em Bash para instalar o **Multipass**, iniciar uma máquina virtu
 Caso necessário para resolver o problema de permissões do Docker ao instalar o software. A solução foi incorporada diretamente no script, garantindo que o usuário seja adicionado ao grupo `docker` após a instalação.
 
 ### Script Ajustado
+
+```
 #!/bin/bash
 
 # Verificar se o Multipass está instalado
